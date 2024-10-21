@@ -1,5 +1,5 @@
 {
-    "name": "zego/sdk",
+    "name": "zegophp/sdk",
     "description": "An example PHP SDK for  zego API ",
     "autoload": {
         "psr-4": {
