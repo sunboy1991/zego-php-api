@@ -1,0 +1,15 @@
+{
+    "name": "zego/sdk",
+    "autoload": {
+        "psr-4": {
+            "Zego\\Sdk\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "sunboylu",
+            "email": "1044768335@qq.com"
+        }
+    ],
+    "require": {}
+}
