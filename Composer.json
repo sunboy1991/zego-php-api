@@ -1,9 +1,14 @@
 {
     "name": "zego/sdk",
+    "description": "An example PHP SDK for  zego API ",
     "autoload": {
         "psr-4": {
-            "Zego\\Sdk\\": "src/"
+            "Sdk\\": "src/"
         }
+    },
+    "type": "library",
+    "require": {
+        "php": ">=7.4"
     },
     "authors": [
         {
