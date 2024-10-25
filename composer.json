@@ -3,7 +3,7 @@
     "description": "An example PHP SDK for  zego API ",
     "autoload": {
         "psr-4": {
-            "Sdk\\": "src/"
+            "sdk\\": "src/"
         }
     },
     "type": "library",
