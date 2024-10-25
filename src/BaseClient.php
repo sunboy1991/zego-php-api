@@ -64,7 +64,9 @@ class BaseClient
    */
   public function makeRequest($params)
   {
-    
+    if (!empty($params['CustomReason'])) {
+        $params['CustomReason'] = urlencode($params['CustomReason']);
+    }
     // 构建完整的请求参数
     $requestParams = $this->buildRequestParams($params);
   
