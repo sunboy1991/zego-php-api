@@ -73,10 +73,10 @@ class BaseClient
     $queryString = preg_replace('/%5B\d+%5D/', '%5B%5D', $queryString);
     // 拼接完整的 API 请求 URL
     $url = $this->config->getBaseUrl() . '?' . $queryString;
-    print($queryString);
+    print($queryString . "\n");
     // 初始化 CURL
     $ch = curl_init();
-    print($url);
+    print($url . "\n");
     // 设置 CURL 选项
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
