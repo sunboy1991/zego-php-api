@@ -53,13 +53,13 @@ class StreamAPI extends BaseClient
     }
 
     //开始录制
-    public function startRecord(string $roomId, array $record, array $storageParams, array $recordOutputParams = [])
+    public function startRecord(string $roomId, array $recordInputParams, array $storageParams, array $recordOutputParams = [])
     {
         $body = [
             'Action' => 'StartRecord',
             'RoomId' => $roomId,
-            'RecordInputParams' => $roomId,
-            'StorageParams' => $roomId,
+            'RecordInputParams' => $recordInputParams,
+            'StorageParams' => $storageParams,
         ];
         if ($recordOutputParams)
         {
