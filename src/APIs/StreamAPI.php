@@ -51,4 +51,29 @@ class StreamAPI extends BaseClient
         ];
         return $this->makeRequest($params);
     }
+
+    //开始录制
+    public function startRecord(string $roomId, array $record, array $storageParams, array $recordOutputParams = [])
+    {
+        $body = [
+            'Action' => 'StartRecord',
+            'RoomId' => $roomId,
+            'RecordInputParams' => $roomId,
+            'StorageParams' => $roomId,
+        ];
+        if ($recordOutputParams)
+        {
+            $body['RecordOutputParams'] = $recordOutputParams;
+        }
+        return $this->makeRequest([], $body);
+    }
+
+    //结束录制
+    public function stopRecord(string $taskId)
+    {
+        $body = [
+            'TaskId' => $taskId
+        ];
+        return $this->makeRequest([], $body);
+    }
 }

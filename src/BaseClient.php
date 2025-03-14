@@ -62,7 +62,7 @@ class BaseClient
    * @return array|false 返回结果或者 false 表示请求失败
    * @throws \Exception
    */
-  public function makeRequest($params)
+  public function makeRequest($params = [], $body = [])
   {
     if (!empty($params['CustomReason'])) {
         $params['CustomReason'] = urlencode($params['CustomReason']);
@@ -83,6 +83,10 @@ class BaseClient
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5); // 超时时间 5 秒
+    if (!empty($body)) {
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($body));
+    }
 
     // 执行请求
     $response = curl_exec($ch);

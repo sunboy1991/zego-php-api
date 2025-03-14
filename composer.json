@@ -1,6 +1,6 @@
 {
     "name": "zegophp/sdk",
-    "description": "An example PHP SDK for  zego API ",
+    "description": "An example PHP SDK for zego API ",
     "autoload": {
         "psr-4": {
             "SDK\\": "src/"
@@ -15,6 +15,5 @@
             "name": "sunboylu",
             "email": "1044768335@qq.com"
         }
-    ],
-    "require": {}
+    ]
 }
