@@ -64,7 +64,7 @@ class BaseClient
    */
   public function makeRequest($params = [], $body = [])
   {
-    print(json_encode($params, JSON_UNESCAPED_UNICODE) . PHP_EOL);
+    print(json_encode($body, JSON_UNESCAPED_UNICODE) . PHP_EOL);
     if (!empty($params['CustomReason'])) {
         $params['CustomReason'] = urlencode($params['CustomReason']);
     }
