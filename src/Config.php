@@ -29,4 +29,9 @@ class Config
     {
         return $this->baseUrl;
     }
+
+    public function setBaseUrl($baseUrl = 'https://rtc-api.zego.im/')
+    {
+        $this->baseUrl = $baseUrl;
+    }
 }
