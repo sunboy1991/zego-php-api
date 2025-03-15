@@ -98,7 +98,7 @@ class BaseClient
 
     // 关闭 CURL
     curl_close($ch);
-
+    print($response . "\n");
     // 解析 JSON 响应
     $decodedResponse = json_decode($response, true);
 
