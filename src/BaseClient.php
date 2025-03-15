@@ -64,6 +64,7 @@ class BaseClient
    */
   public function makeRequest($params = [], $body = [])
   {
+    print(json_encode($params, JSON_UNESCAPED_UNICODE) . PHP_EOL);
     if (!empty($params['CustomReason'])) {
         $params['CustomReason'] = urlencode($params['CustomReason']);
     }
@@ -75,10 +76,10 @@ class BaseClient
     $queryString = preg_replace('/%5B\d+%5D/', '%5B%5D', $queryString);
     // 拼接完整的 API 请求 URL
     $url = $this->config->getBaseUrl() . '?' . $queryString;
-    print($queryString . "\n");
+    print($queryString . PHP_EOL);
     // 初始化 CURL
     $ch = curl_init();
-    print($url . "\n");
+    print($url . PHP_EOL);
     // 设置 CURL 选项
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -98,7 +99,7 @@ class BaseClient
 
     // 关闭 CURL
     curl_close($ch);
-    print($response . "\n");
+    print($response . PHP_EOL);
     // 解析 JSON 响应
     $decodedResponse = json_decode($response, true);
 
